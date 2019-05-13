@@ -130,3 +130,6 @@ typings/
 
 # Keys for Google Auth
 keys.js
+
+# eslint
+.eslintrc.json
