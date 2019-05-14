@@ -128,8 +128,8 @@ typings/
 
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
 
-# Keys for Google Auth
-keys.js
+# Keys for different environment
+config/dev.js
 
 # eslint
 .eslintrc.json
