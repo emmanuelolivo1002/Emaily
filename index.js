@@ -15,6 +15,8 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
 
+// ****** MIDDLEWARE START *******
+
 // Configuration for cookies with express
 app.use(
   cookieSession({
@@ -27,6 +29,8 @@ app.use(
 // Setup Passport with express
 app.use(passport.initialize());
 app.use(passport.session());
+
+// ****** MIDDLEWARE END *******
 
 //Import auth routes and Call auth routes with our app object
 require("./routes/authRoutes")(app);
