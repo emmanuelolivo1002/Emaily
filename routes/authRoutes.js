@@ -16,7 +16,15 @@ module.exports = app => {
     res.send(req.user);
   });
 
-  app.get("/auth/google/callback", passport.authenticate("google"));
+  app.get(
+    "/auth/google/callback",
+    // Passport middleware
+    passport.authenticate("google"),
+    (req, res) => {
+      // Redirect after user was successfully authenticated
+      res.redirect("/surveys");
+    }
+  );
 
   app.get("/api/current_user", (req, res) => {
     res.send(req.user);
