@@ -130,6 +130,10 @@ typings/
 
 # Keys for different environment
 config/dev.js
+client/.env.production
+client/.env.development
 
 # eslint
 .eslintrc.json
+
+
