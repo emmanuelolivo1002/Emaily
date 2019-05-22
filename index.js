@@ -38,9 +38,22 @@ app.use(passport.session());
 
 // ****** ROUTES START *******
 
-//Import auth routes and Call auth routes with our app object
+// Import auth routes and Call auth routes with our app object
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+
+// Handle React routes in production
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets like main.js or main.css
+  app.use(express.static("./client/build"));
+
+  // Express will serve up index.html file if it doesn't recognize the route
+  // If it's not any of the routes that were specified above
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 // ****** ROUTES END *******
 
