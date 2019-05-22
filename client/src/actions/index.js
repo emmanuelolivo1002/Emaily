@@ -8,3 +8,11 @@ export const fetchUser = () => async dispatch => {
 
   dispatch({ type: FETCH_USER, payload: res.data });
 };
+
+export const handleToken = token => async dispatch => {
+  // Send token to backend server
+  const res = await axios.post("/api/stripe", token);
+
+  // Get the user with the updated data
+  dispatch({ type: FETCH_USER, payload: res.data });
+};
