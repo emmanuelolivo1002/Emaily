@@ -11,7 +11,7 @@
     "server": "nodemon index.js",
     "client": "yarn --cwd client start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --cwd client && yarn build --cwd client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --cwd client install && yarn --cwd client build"
   },
   "license": "MIT",
   "dependencies": {
