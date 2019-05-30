@@ -7,6 +7,7 @@ const keys = require("./config/keys");
 
 // Mongoose Models
 require("./models/User");
+require("./models/Survey");
 
 // Run what's in passport.js file
 require("./services/passport");
