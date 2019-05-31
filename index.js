@@ -42,6 +42,7 @@ app.use(passport.session());
 // Import auth routes and Call auth routes with our app object
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 // Handle React routes in production
 if (process.env.NODE_ENV === "production") {
